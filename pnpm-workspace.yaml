@@ -16,9 +16,9 @@ catalogs:
         "tsdown": 0.21.0
     peer:
         # Supported versions
-        "tsdown": ~0.21.0 || ~0.22.0
+        "tsdown": ^0.21.0
     test:
-        "vitest": ^4.1
+        "vitest": ^5
 
 minimumReleaseAge: 1440
 

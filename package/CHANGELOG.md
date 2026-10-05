@@ -1,3 +1,9 @@
+## Next
+
+### What's Changed
+
+- update `tsdown` supported version range to `^0.21.0`
+
 ## 0.5.0 (2026-06-12)
 
 ### Breaking Changes
