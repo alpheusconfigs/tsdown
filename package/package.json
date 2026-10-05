@@ -11,11 +11,11 @@
         "js",
         "javascript"
     ],
-    "homepage": "https://github.com/alpheuscfg/tsdown",
-    "bugs": "https://github.com/alpheuscfg/tsdown/issues",
+    "homepage": "https://github.com/alpheusconfigs/tsdown",
+    "bugs": "https://github.com/alpheusconfigs/tsdown/issues",
     "repository": {
         "type": "git",
-        "url": "https://github.com/alpheuscfg/tsdown.git",
+        "url": "https://github.com/alpheusconfigs/tsdown.git",
         "directory": "package"
     },
     "license": "MIT",
