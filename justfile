@@ -114,7 +114,7 @@ clean-macos:
 
 # Clean builds (Windows)
 clean-windows:
-    Remove-Item -Recurse -Force ./{{pkg}}/dist
+    if (Test-Path "./{{pkg}}/dist") { Remove-Item -Recurse -Force "./{{pkg}}/dist" }
 
 # Clean builds
 clean:
@@ -123,6 +123,11 @@ clean:
 # Clean everything (Linux)
 clean-all-linux:
     just clean
+
+    rm -rf ./{{test_iife}}/node_modules
+    rm -rf ./{{test_dts}}/node_modules
+    rm -rf ./{{test_esm}}/node_modules
+    rm -rf ./{{test_cjs}}/node_modules
 
     rm -rf ./{{pkg}}/node_modules
 
@@ -136,9 +141,14 @@ clean-all-macos:
 clean-all-windows:
     just clean
 
-    Remove-Item -Recurse -Force ./{{pkg}}/node_modules
+    if (Test-Path "./{{test_iife}}/node_modules") { Remove-Item -Recurse -Force "./{{test_iife}}/node_modules" }
+    if (Test-Path "./{{test_dts}}/node_modules") { Remove-Item -Recurse -Force "./{{test_dts}}/node_modules" }
+    if (Test-Path "./{{test_esm}}/node_modules") { Remove-Item -Recurse -Force "./{{test_esm}}/node_modules" }
+    if (Test-Path "./{{test_cjs}}/node_modules") { Remove-Item -Recurse -Force "./{{test_cjs}}/node_modules" }
 
-    Remove-Item -Recurse -Force ./node_modules
+    if (Test-Path "./{{pkg}}/node_modules") { Remove-Item -Recurse -Force "./{{pkg}}/node_modules" }
+
+    if (Test-Path "./node_modules") { Remove-Item -Recurse -Force "./node_modules" }
 
 # Clean everything
 clean-all:
