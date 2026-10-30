@@ -3,7 +3,7 @@
     "devDependencies": {
         "@apst/biome": "~0.3.2",
         "@apst/tsconfig": "~1.0.0",
-        "@biomejs/biome": "^2.6.3",
+        "@biomejs/biome": "^2.6.4",
         "@types/node": "catalog:dev",
         "tsdown": "~0.23.3",
         "typescript": "^7.0.2"
