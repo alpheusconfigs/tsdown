@@ -5,7 +5,7 @@
         "@apst/tsconfig": "~1.0.0",
         "@biomejs/biome": "^2.6.3",
         "@types/node": "catalog:dev",
-        "tsdown": "~0.23.1",
+        "tsdown": "~0.23.3",
         "typescript": "^7.0.2"
     }
 }
