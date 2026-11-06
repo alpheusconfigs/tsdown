@@ -1,8 +1,8 @@
 set shell := ["bash", "-cu"]
 set windows-shell := ["pwsh", "-Command"]
 
-tsc := "pnpm exec tsc"
-biome := "pnpm exec biome"
+oxfmt := "pnpm exec oxfmt"
+oxlint := "pnpm exec oxlint"
 tsdown := "pnpm exec tsdown"
 vitest := "pnpm exec vitest"
 
@@ -30,33 +30,22 @@ i:
 
 # Format code
 fmt:
-    {{biome}} check --write .
+    {{oxfmt}}
 
 # Lint code with ls-lint
 ls-lint:
     ls-lint -config ./.ls-lint.yaml
 
 # Lint code with ls-lint
-lslint:
-    just ls-lint
+lslint: ls-lint
 
 # Lint code with typos-cli
 typos:
     typos
 
-# Lint code with TypeScript Compiler
-tsc:
-    cd ./{{pkg}} && {{tsc}} --noEmit
-
-# Lint code
+# Lint code with type check
 lint:
-    just lslint
-    just typos
-    just tsc
-
-# Lint code with Biome
-lint-biome:
-    {{biome}} lint .
+    {{oxlint}} --fix --fix-suggestions --fix-dangerously
 
 # Build package
 build:
@@ -70,11 +59,7 @@ test:
     cd ./{{test_iife}} && {{vitest}} run
 
 # Check code
-check:
-    just fmt
-    just lint
-    just build
-    just test
+check: build fmt ls-lint typos lint test
 
 # Build CommonJS example
 example-cjs:
@@ -109,8 +94,7 @@ clean-linux:
     rm -rf ./{{pkg}}/dist
 
 # Clean builds (macOS)
-clean-macos:
-    just clean-linux
+clean-macos: clean-linux
 
 # Clean builds (Windows)
 clean-windows:

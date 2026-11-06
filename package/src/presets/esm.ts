@@ -12,7 +12,8 @@ type CompleteExtraOptionsESM = {
     /**
      * Whether to use a fixed extension for the output files.
      *
-     * If `true`, all output files will use the `.mjs` extension regardless anything else.
+     * If `true`, all output files will use the `.mjs` extension regardless
+     * anything else.
      *
      * By default, it is `false`.
      */
@@ -48,7 +49,7 @@ const esmPreset = (config?: PresetConfigESM): Preset => {
                 pkgType,
             }: OutExtensionContext): OutExtensionObject => {
                 // Fixed extension
-                if (presetOptions?.fixedExtension) {
+                if (presetOptions?.fixedExtension === true) {
                     return {
                         js: ".mjs",
                     };
@@ -68,7 +69,7 @@ const esmPreset = (config?: PresetConfigESM): Preset => {
             },
         } satisfies UserConfig);
 
-        const cfg: UserConfig = toMerged(cfgBase, configRest ?? {});
+        const cfg: UserConfig = toMerged(cfgBase, configRest);
 
         return {
             config: {

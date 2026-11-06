@@ -63,35 +63,19 @@ beforeAll(async (): Promise<void> => {
 });
 
 describe("IIFE tests", (): void => {
-    it("should have dist", async (): Promise<void> => {
-        const isDistExists: boolean = Fs.existsSync(PATH_DIST);
-
-        if (!isDistExists) {
-            return expect(isDistExists).toBe(true);
-        }
+    it("should have dist", (): void => {
+        expect(Fs.existsSync(PATH_DIST)).toBe(true);
     });
 
-    it("should work in development", async (): Promise<void> => {
-        const isIndexExists: boolean = Fs.existsSync(PATH_INDEX_DEV);
-
-        if (!isIndexExists) {
-            return expect(isIndexExists).toBe(true);
-        }
+    it("should work in development", (): void => {
+        expect(Fs.existsSync(PATH_INDEX_DEV)).toBe(true);
     });
 
-    it("should work in production", async (): Promise<void> => {
-        const isIndexExists: boolean = Fs.existsSync(PATH_INDEX_PRD);
-
-        if (!isIndexExists) {
-            return expect(isIndexExists).toBe(true);
-        }
+    it("should work in production", (): void => {
+        expect(Fs.existsSync(PATH_INDEX_PRD)).toBe(true);
     });
 
-    it("should work in production and minify", async (): Promise<void> => {
-        const isIndexExists: boolean = Fs.existsSync(PATH_INDEX_PRD_MIN);
-
-        if (!isIndexExists) {
-            return expect(isIndexExists).toBe(true);
-        }
+    it("should work in production and minify", (): void => {
+        expect(Fs.existsSync(PATH_INDEX_PRD_MIN)).toBe(true);
     });
 });

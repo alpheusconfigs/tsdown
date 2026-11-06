@@ -21,9 +21,7 @@ beforeAll(async (): Promise<void> => {
                 index: "./src/index.ts",
             },
         },
-        [
-            cjsPreset(),
-        ],
+        [cjsPreset()],
     );
 
     for (const config of configs) {
@@ -32,23 +30,9 @@ beforeAll(async (): Promise<void> => {
 });
 
 describe("CommonJS tests", (): void => {
-    it("should work", async (): Promise<void> => {
-        const isDistExists: boolean = Fs.existsSync(PATH_DIST);
-
-        if (!isDistExists) {
-            return expect(isDistExists).toBe(true);
-        }
-
-        const isIndexExists: boolean = Fs.existsSync(PATH_INDEX);
-
-        if (!isIndexExists) {
-            return expect(isIndexExists).toBe(true);
-        }
-
-        const isMapExists: boolean = Fs.existsSync(`${PATH_INDEX}.map`);
-
-        if (!isMapExists) {
-            return expect(isMapExists).toBe(true);
-        }
+    it("should work", (): void => {
+        expect(Fs.existsSync(PATH_DIST)).toBe(true);
+        expect(Fs.existsSync(PATH_INDEX)).toBe(true);
+        expect(Fs.existsSync(`${PATH_INDEX}.map`)).toBe(true);
     });
 });

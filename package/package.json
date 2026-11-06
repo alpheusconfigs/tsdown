@@ -3,26 +3,32 @@
     "version": "0.5.0",
     "description": "A shareable tsdown configuration",
     "keywords": [
-        "tsdown",
-        "configuration",
         "config",
-        "ts",
-        "typescript",
+        "configuration",
+        "javascript",
         "js",
-        "javascript"
+        "ts",
+        "tsdown",
+        "typescript"
     ],
     "homepage": "https://github.com/alpheusconfigs/tsdown",
     "bugs": "https://github.com/alpheusconfigs/tsdown/issues",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/alpheusconfigs/tsdown.git",
-        "directory": "package"
-    },
     "license": "MIT",
     "author": {
         "name": "Alpheus",
         "email": "contact@alphe.us"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alpheusconfigs/tsdown.git",
+        "directory": "package"
+    },
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
     "exports": {
         ".": {
             "types": "./dist/index.d.ts",
@@ -36,12 +42,6 @@
         },
         "./package.json": "./package.json"
     },
-    "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
-    "files": [
-        "dist"
-    ],
     "dependencies": {
         "es-toolkit": "^1.40.0"
     },

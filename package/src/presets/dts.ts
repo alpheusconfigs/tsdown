@@ -42,14 +42,13 @@ const dtsPreset = (config?: PresetConfigDTS): Preset => {
         const optsPreset: UserConfig = {
             dts: {
                 emitDtsOnly: true,
-                compilerOptions: {
-                    // whether enable oxc-transform
-                    ...(presetOptions?.performanceMode
+                // whether enable oxc-transform
+                compilerOptions:
+                    presetOptions?.performanceMode === true
                         ? {
                               isolatedDeclarations: true,
                           }
-                        : {}),
-                },
+                        : {},
             },
             // always output .d.ts
             outExtensions: (): OutExtensionObject => {
@@ -61,7 +60,7 @@ const dtsPreset = (config?: PresetConfigDTS): Preset => {
 
         const optsBase: UserConfig = toMerged(internalConfig, optsPreset);
 
-        const cfg: UserConfig = toMerged(optsBase, configRest ?? {});
+        const cfg: UserConfig = toMerged(optsBase, configRest);
 
         return {
             config: cfg,

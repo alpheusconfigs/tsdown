@@ -5,7 +5,7 @@ import type { UserConfig } from "tsdown";
  */
 type PresetContext = {
     /**
-     * tsdown configuration.
+     * Tsdown configuration.
      */
     config: UserConfig;
 };
@@ -15,7 +15,7 @@ type PresetContext = {
  */
 type PresetResult = {
     /**
-     * tsdown configuration.
+     * Tsdown configuration.
      */
     config?: UserConfig | UserConfig[];
 };

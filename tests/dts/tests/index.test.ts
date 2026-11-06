@@ -36,17 +36,8 @@ beforeAll(async (): Promise<void> => {
 });
 
 describe("DTS tests", (): void => {
-    it("should work", async (): Promise<void> => {
-        const isDistExists: boolean = Fs.existsSync(PATH_DIST);
-
-        if (!isDistExists) {
-            return expect(isDistExists).toBe(true);
-        }
-
-        const isIndexExists: boolean = Fs.existsSync(PATH_INDEX);
-
-        if (!isIndexExists) {
-            return expect(isIndexExists).toBe(true);
-        }
+    it("should work", (): void => {
+        expect(Fs.existsSync(PATH_DIST)).toBe(true);
+        expect(Fs.existsSync(PATH_INDEX)).toBe(true);
     });
 });

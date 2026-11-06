@@ -7,9 +7,5 @@ export default defineConfig(
             index: "./src/index.ts",
         },
     },
-    [
-        esmPreset(),
-        cjsPreset(),
-        dtsPreset(),
-    ],
+    [esmPreset(), cjsPreset(), dtsPreset()],
 );

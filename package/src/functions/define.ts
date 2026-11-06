@@ -36,9 +36,7 @@ const defineConfigFn = (
     const config: UserConfig = toMerged(OPTIONS_DEFAULT, userConfig ?? {});
 
     if (!presets) {
-        return [
-            config,
-        ];
+        return [config];
     }
 
     const presetResults: PresetResult[] = [];
@@ -107,11 +105,7 @@ function defineConfig(presets?: Preset[]): UserConfig[];
  *             index: "./src/index.ts",
  *         },
  *     },
- *     [
- *         esmPreset(),
- *         cjsPreset(),
- *         dtsPreset(),
- *     ],
+ *     [esmPreset(), cjsPreset(), dtsPreset()],
  * );
  * ```
  */

@@ -1,8 +1,4 @@
-export type {
-    Preset,
-    PresetContext,
-    PresetResult,
-} from "#/@types/preset";
+export type { Preset, PresetContext, PresetResult } from "#/@types/preset";
 export type { ExtraOptionsCJS, PresetConfigCJS } from "#/presets/cjs";
 export type { ExtraOptionsDTS, PresetConfigDTS } from "#/presets/dts";
 export type { ExtraOptionsESM, PresetConfigESM } from "#/presets/esm";

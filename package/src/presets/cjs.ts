@@ -12,7 +12,8 @@ type CompleteExtraOptionsCJS = {
     /**
      * Whether to use a fixed extension for the output files.
      *
-     * If `true`, all output files will use the `.cjs` extension regardless anything else.
+     * If `true`, all output files will use the `.cjs` extension regardless
+     * anything else.
      *
      * By default, it is `false`.
      */
@@ -48,7 +49,7 @@ const cjsPreset = (config?: PresetConfigCJS): Preset => {
                 pkgType,
             }: OutExtensionContext): OutExtensionObject => {
                 // Fixed extension
-                if (presetOptions?.fixedExtension) {
+                if (presetOptions?.fixedExtension === true) {
                     return {
                         js: ".cjs",
                     };
@@ -68,7 +69,7 @@ const cjsPreset = (config?: PresetConfigCJS): Preset => {
             },
         } satisfies UserConfig);
 
-        const cfg: UserConfig = toMerged(cfgBase, cfgRest ?? {});
+        const cfg: UserConfig = toMerged(cfgBase, cfgRest);
 
         return {
             config: {
