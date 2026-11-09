@@ -7,7 +7,7 @@
         "@apst/tsconfig": "~1.0.0",
         "@types/node": "catalog:dev",
         "oxfmt": "~0.77.0",
-        "oxlint": "^1.91.0",
+        "oxlint": "^1.92.0",
         "oxlint-tsgolint": "^7.0.2005",
         "tsdown": "~0.23.5",
         "typescript": "^7.0.2"
