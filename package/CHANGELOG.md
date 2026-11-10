@@ -2,7 +2,7 @@
 
 ### What's Changed
 
-- update `tsdown` supported version range to `^0.21.0`
+- update `tsdown` supported version range to `^0.23.0`
 
 ## 0.5.0 (2026-06-12)
 

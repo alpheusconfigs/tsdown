@@ -8,7 +8,10 @@
     "dependencies": {
         "@apst/tsdown": "workspace:*",
         "@types/node": "catalog:dev",
-        "tsdown": "catalog:peer",
+        "tsdown": "catalog:dev",
         "vitest": "catalog:test"
+    },
+    "devDependencies": {
+        "vite": "catalog:test"
     }
 }
