@@ -41,7 +41,7 @@ const dtsPreset = (config?: PresetConfigDTS): Preset => {
     return ({ config: internalConfig }): PresetResult => {
         const optsPreset: UserConfig = {
             dts: {
-                emitDtsOnly: true,
+                dtsOnly: true,
                 // whether enable oxc-transform
                 compilerOptions:
                     presetOptions?.performanceMode === true
@@ -50,9 +50,11 @@ const dtsPreset = (config?: PresetConfigDTS): Preset => {
                           }
                         : {},
             },
-            // always output .d.ts
+            // Always output .d.ts. rolldown-plugin-dts >= 0.30 derives dts-only
+            // entry names from the js extension, so both extensions are pinned.
             outExtensions: (): OutExtensionObject => {
                 return {
+                    js: ".js",
                     dts: ".ts",
                 };
             },

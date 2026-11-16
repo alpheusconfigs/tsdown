@@ -2,7 +2,8 @@
 
 ### What's Changed
 
-- update `tsdown` supported version range to `^0.23.0`
+- update `tsdown` supported version range to `^0.23.7`
+- keep the DTS preset outputting `.d.ts` files with `tsdown@0.23.7`
 
 ## 0.5.0 (2026-06-12)
 

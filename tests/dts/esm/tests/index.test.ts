@@ -13,6 +13,7 @@ const CWD: string = process.cwd();
 const PATH_DIST: string = Path.join(CWD, "dist");
 
 const PATH_INDEX: string = Path.join(PATH_DIST, "index.d.ts");
+const PATH_INDEX_MTS: string = Path.join(PATH_DIST, "index.d.mts");
 
 beforeAll(async (): Promise<void> => {
     const configs: UserConfig[] = defineConfig(
@@ -35,9 +36,10 @@ beforeAll(async (): Promise<void> => {
     }
 });
 
-describe("DTS tests", (): void => {
+describe("DTS ESModule tests", (): void => {
     it("should work", (): void => {
         expect(Fs.existsSync(PATH_DIST)).toBe(true);
         expect(Fs.existsSync(PATH_INDEX)).toBe(true);
+        expect(Fs.existsSync(PATH_INDEX_MTS)).toBe(false);
     });
 });

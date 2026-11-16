@@ -1,6 +1,7 @@
 packages:
     - ./package
     - ./tests/*
+    - ./tests/*/*
     - ./examples/*
 
 autoInstallPeers: false
@@ -12,9 +13,9 @@ allowBuilds:
 catalogs:
     dev:
         "@types/node": ^25
-        "tsdown": 0.23.0
+        "tsdown": 0.23.7
     peer:
-        "tsdown": ^0.23.0
+        "tsdown": ^0.23.7
     test:
         "vite": ^8.3.7
         "vitest": ^5.1.0

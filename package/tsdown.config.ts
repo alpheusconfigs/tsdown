@@ -42,9 +42,10 @@ export default defineConfig([
     {
         ...options,
         dts: {
-            emitDtsOnly: true,
+            dtsOnly: true,
         },
         outExtensions: (): OutExtensionObject => ({
+            js: ".js",
             dts: ".ts",
         }),
     },

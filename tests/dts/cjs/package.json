@@ -1,7 +1,6 @@
 {
-    "name": "test-dts",
+    "name": "test-dts-cjs",
     "private": true,
-    "type": "module",
     "scripts": {
         "test": "vitest run",
         "": ""

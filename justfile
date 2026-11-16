@@ -13,7 +13,8 @@ pkg := "package"
 
 test_cjs := "tests/cjs"
 test_esm := "tests/esm"
-test_dts := "tests/dts"
+test_dts_cjs := "tests/dts/cjs"
+test_dts_esm := "tests/dts/esm"
 test_iife := "tests/iife"
 
 example_cjs := "examples/cjs"
@@ -52,10 +53,12 @@ build:
     cd ./{{pkg}} && ../node_modules/.bin/tsdown -c tsdown.config.ts
 
 # Run tests
+[env("VITE_CONFIG_NATIVE_IGNORE_WARNING", "true")]
 test:
     cd ./{{test_cjs}} && {{vitest}} run
     cd ./{{test_esm}} && {{vitest}} run
-    cd ./{{test_dts}} && {{vitest}} run
+    cd ./{{test_dts_cjs}} && {{vitest}} run
+    cd ./{{test_dts_esm}} && {{vitest}} run
     cd ./{{test_iife}} && {{vitest}} run
 
 # Check code
@@ -109,7 +112,8 @@ clean-all-linux:
     just clean
 
     rm -rf ./{{test_iife}}/node_modules
-    rm -rf ./{{test_dts}}/node_modules
+    rm -rf ./{{test_dts_esm}}/node_modules
+    rm -rf ./{{test_dts_cjs}}/node_modules
     rm -rf ./{{test_esm}}/node_modules
     rm -rf ./{{test_cjs}}/node_modules
 
@@ -126,7 +130,8 @@ clean-all-windows:
     just clean
 
     if (Test-Path "./{{test_iife}}/node_modules") { Remove-Item -Recurse -Force "./{{test_iife}}/node_modules" }
-    if (Test-Path "./{{test_dts}}/node_modules") { Remove-Item -Recurse -Force "./{{test_dts}}/node_modules" }
+    if (Test-Path "./{{test_dts_esm}}/node_modules") { Remove-Item -Recurse -Force "./{{test_dts_esm}}/node_modules" }
+    if (Test-Path "./{{test_dts_cjs}}/node_modules") { Remove-Item -Recurse -Force "./{{test_dts_cjs}}/node_modules" }
     if (Test-Path "./{{test_esm}}/node_modules") { Remove-Item -Recurse -Force "./{{test_esm}}/node_modules" }
     if (Test-Path "./{{test_cjs}}/node_modules") { Remove-Item -Recurse -Force "./{{test_cjs}}/node_modules" }
 
