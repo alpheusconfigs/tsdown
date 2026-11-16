@@ -76,6 +76,16 @@ example-esm:
 example-iife:
     cd ./{{example_iife}} && ./{{tsdown}} -c tsdown.config.ts
 
+# Bump package versions
+ver VERSION:
+    pnpm version \
+        --no-git-tag-version \
+        --no-commit-hooks \
+        --no-git-checks \
+        --allow-same-version \
+        --recursive \
+        {{VERSION}}
+
 # Publish package with dev tag as dry-run
 publish-dev-try:
     cd ./{{pkg}} && {{publish_dev}} --dry-run
