@@ -6,7 +6,7 @@
         "@apst/oxlint": "~0.5.0",
         "@apst/tsconfig": "^1.0.0",
         "@types/node": "catalog:dev",
-        "oxfmt": "~0.78.0",
+        "oxfmt": "~0.79.0",
         "oxlint": "^1.92.0",
         "oxlint-tsgolint": "^7.0.2007",
         "tsdown": "~0.23.7",
